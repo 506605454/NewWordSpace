@@ -1,205 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:padding="@dimen/all_padding"
-    android:orientation="vertical"
-    android:layout_height="match_parent" >
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/all_padding">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/collect"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/text_width"
-            android:layout_marginLeft="@dimen/all_padding"
-            android:text="@string/collet"/>
+
         <LinearLayout
+            android:id="@+id/my_collect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/right"
-                android:layout_gravity="right"
-                />
-        </LinearLayout>
+                android:background="@drawable/collect" />
 
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="@dimen/all_padding"
-        android:layout_marginBottom="@dimen/all_padding"
-        android:background="@color/little_dark"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/settings"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/text_width"
-            android:layout_marginLeft="@dimen/all_padding"
-            android:text="@string/settings"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/right"
-                android:layout_gravity="right"
-                />
-        </LinearLayout>
-    </LinearLayout>
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="@dimen/all_padding"
-        android:layout_marginBottom="@dimen/all_padding"
-        android:background="@color/little_dark"
-        />
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/about"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/text_width"
-            android:layout_marginLeft="@dimen/all_padding"
-            android:text="@string/about"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/right"
-                android:layout_gravity="right"
-                />
-        </LinearLayout>
-    </LinearLayout>
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="@dimen/all_padding"
-        android:layout_marginBottom="@dimen/all_padding"
-        android:background="@color/little_dark"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_vertical_margin"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/text_width"
-        android:layout_marginLeft="@dimen/all_padding"
-        android:text="@string/app_introduce"/>
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="@dimen/all_padding"
-        android:layout_marginBottom="@dimen/all_padding"
-        android:background="@color/little_dark"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/news"
-            />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_width"
                 android:layout_marginLeft="@dimen/all_padding"
-                android:text="@string/xiaohei_news"/>
-            <TextView
-                android:layout_width="wrap_content"
+                android:text="@string/collet"
+                android:textSize="@dimen/text_width" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/content_size"
-                android:layout_marginLeft="@dimen/all_padding"
-                android:text="@string/xiaohei_news_intro"/>
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/right" />
+            </LinearLayout>
+
+
         </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginBottom="@dimen/all_padding"
+            android:layout_marginTop="@dimen/all_padding"
+            android:background="@color/little_dark" />
+
         <LinearLayout
+            android:id="@+id/setting_lo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/download"
-                android:layout_gravity="center_horizontal|right"/>
+                android:background="@drawable/settings" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/all_padding"
+                android:text="@string/settings"
+                android:textSize="@dimen/text_width" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/right" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginBottom="@dimen/all_padding"
+            android:layout_marginTop="@dimen/all_padding"
+            android:background="@color/little_dark" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/about" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/all_padding"
+                android:text="@string/about"
+                android:textSize="@dimen/text_width" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/right" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginBottom="@dimen/all_padding"
+            android:layout_marginTop="@dimen/all_padding"
+            android:background="@color/little_dark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_vertical_margin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
         </LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/all_padding"
+            android:text="@string/app_introduce"
+            android:textSize="@dimen/text_width" />
 
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginBottom="@dimen/all_padding"
+            android:layout_marginTop="@dimen/all_padding"
+            android:background="@color/little_dark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/news" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/all_padding"
+                    android:text="@string/xiaohei_news"
+                    android:textSize="@dimen/text_width" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/all_padding"
+                    android:text="@string/xiaohei_news_intro"
+                    android:textSize="@dimen/content_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|right"
+                    android:background="@drawable/download" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
 </ScrollView>

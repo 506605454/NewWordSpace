@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginTop="@dimen/little_padding"
-            android:background="@drawable/image_tabbar_button_search" />
+            android:background="@drawable/thumb" />
 
         <TextView
             android:id="@+id/up_count"

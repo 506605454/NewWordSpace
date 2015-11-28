@@ -4,13 +4,30 @@
     android:layout_height="@dimen/tittleBar_width"
     android:background="@color/grey">
 
+    <ImageView
+        android:layout_marginLeft="@dimen/all_padding"
+        android:id="@+id/back_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:background="@drawable/back"/>
+
     <TextView
+        android:id="@+id/tittle_name"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
         android:text="@string/two"
+        android:textColor="@color/little_dark"
         android:textSize="@dimen/tittleSize" />
+     <!--<ImageView-->
+         <!--android:layout_width="wrap_content"-->
+         <!--android:layout_height="wrap_content"-->
+         <!--android:layout_centerInParent="true"-->
+         <!--android:layout_centerVertical="true"-->
+         <!--android:background="@drawable/settings"/>-->
 
 
 

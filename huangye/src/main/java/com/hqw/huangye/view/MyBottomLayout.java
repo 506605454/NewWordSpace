@@ -45,7 +45,7 @@ public class MyBottomLayout extends LinearLayoutCompat {
         reSetStatus(mPersonalLayout, R.drawable.image_tabbar_button_manage,"个人");
         reSetStatus(mStuffLayout, R.drawable.image_tabbar_button_search,"问题");
         reSetStatus(mIssueLayout, R.drawable.image_tabbar_button_more,"东西");
-        ((TextView)mHomeLayout.findViewById(R.id.tv_barname)).setTextColor(Color.BLUE);
+        ((TextView)mHomeLayout.findViewById(R.id.tv_barname)).setTextColor(getResources().getColor(R.color.lite_blue));
 
     }
 
@@ -99,7 +99,7 @@ public class MyBottomLayout extends LinearLayoutCompat {
 
         layout.findViewById(R.id.item_image).setBackgroundResource(id);
         TextView tv = (TextView) layout.findViewById(R.id.tv_barname);
-        tv.setTextColor(Color.WHITE);
+        tv.setTextColor(getResources().getColor(R.color.little_dark));
         if (name!=null){
             tv.setText(name);
         }
@@ -109,7 +109,7 @@ public class MyBottomLayout extends LinearLayoutCompat {
         // 切换成点击状态
         layout.findViewById(R.id.item_image).setBackgroundResource(id);
         TextView tv = (TextView) layout.findViewById(R.id.tv_barname);
-        tv.setTextColor(Color.BLUE);
+        tv.setTextColor(getResources().getColor(R.color.lite_blue));
     }
 
     private void initPic(int i) {
