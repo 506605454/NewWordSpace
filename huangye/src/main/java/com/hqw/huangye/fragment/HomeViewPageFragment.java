@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hqw.huangye.R;
 
@@ -59,6 +60,7 @@ public class HomeViewPageFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
+            Toast.makeText(getActivity(),mWhat+"",Toast.LENGTH_LONG).show();
             Log.i("hei", "home可见" + getClass());
         }
     }

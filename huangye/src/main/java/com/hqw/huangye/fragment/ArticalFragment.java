@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hqw.huangye.R;
+import com.hqw.huangye.activity.MainActivity;
 import com.hqw.huangye.adapter.MyFragmentPagerAdapter;
 
 import java.util.ArrayList;
@@ -67,6 +68,7 @@ public class ArticalFragment extends Fragment {
         mArticalPager.setAdapter(fragmentPagerAdapter);
         mArticalPager.setOnPageChangeListener(new MyPageChangeListener());
 
+
         mArticalPager.setCurrentItem(0);
 
         Log.i("hei", mArticalPager.getAdapter().getCount() + "artical获取的长度");
@@ -105,19 +107,33 @@ public class ArticalFragment extends Fragment {
 
         @Override
         public void onPageScrollStateChanged(int state) {
-
+            Log.i("hei","onPageScrollStateChanged");
         }
 
         @Override
         public void onPageScrolled(int position, float positionOffset,
                                    int positionOffsetPixels) {
-
+            Log.i("hei","onPageScrolled");
         }
 
         @Override
         public void onPageSelected(int position) {
+            Log.i("hei","onPageSelected");
         }
 
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser){
+            Log.i("hei","主home可见");
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.i("hei", "onPause");
+    }
 }

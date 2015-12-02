@@ -2,6 +2,7 @@ package com.hqw.huangye.activity;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -17,6 +18,9 @@ import com.hqw.huangye.fragment.PersonalFragment;
 import com.hqw.huangye.fragment.StuffFragment;
 import com.hqw.huangye.view.MyBottomLayout;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends FragmentActivity {
 
     MyBottomLayout myBottomLayout;
@@ -26,16 +30,38 @@ public class MainActivity extends FragmentActivity {
     IssueFragment issueFragment;
     StuffFragment stuffFragment;
 
+    public Map<String,Integer> mSaveTemp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i("hei","MainActivity onCreate");
         setContentView(R.layout.activity_main);
+        mSaveTemp = new HashMap<String,Integer>();
         homeFragment = new HomeFragment();
         articalFragment = new ArticalFragment();
         personalFragment = new PersonalFragment();
         issueFragment = new IssueFragment();
         stuffFragment = new StuffFragment();
         init();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("hei", "MainActivity onResume");
+    }
+
+    @Override
+    protected void onResumeFragments() {
+        super.onResumeFragments();
+        Log.i("hei", "MainActivity onResumeFragments");
+        if (mSaveTemp!=null){
+            if (mSaveTemp.get("home")!=null){
+                Log.i("hei", "MainActivity onResumeFragments" +mSaveTemp.get("home"));
+
+            }
+        }
     }
 
     private void init() {

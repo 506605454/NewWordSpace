@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hqw.huangye.R;
+import com.hqw.huangye.activity.MainActivity;
 import com.hqw.huangye.adapter.MyFragmentPagerAdapter;
 
 import java.util.ArrayList;
@@ -29,10 +30,13 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i("hei","HomeFragment onCreate 被执行" );
+        Log.i("hei", "HomeFragment onCreate 被执行");
         pagerItemList.clear();
         for (int i = 0; i < 7; i++) {
+            Bundle data = new Bundle();
+            data.putString("text", i + "");
             HomeViewPageFragment fragment = new HomeViewPageFragment();
+            fragment.setArguments(data);
             pagerItemList.add(fragment);
         }
 
@@ -65,7 +69,12 @@ public class HomeFragment extends Fragment {
 
         mPager.setAdapter(fragmentPagerAdapter);
         mPager.setOnPageChangeListener(new MyPageChangeListener());
-        mPager.setCurrentItem(0);
+        if (((MainActivity)getActivity()).mSaveTemp.get("home")!=null){
+            mPager.setCurrentItem(((MainActivity)getActivity()).mSaveTemp.get("home"));
+        }else{
+            mPager.setCurrentItem(0);
+        }
+
         Log.i("hei", mPager.getAdapter().getCount() + "home获取的长度");
     }
 
@@ -103,6 +112,7 @@ public class HomeFragment extends Fragment {
         @Override
         public void onPageScrollStateChanged(int state) {
 
+
         }
 
         @Override
@@ -113,6 +123,8 @@ public class HomeFragment extends Fragment {
 
         @Override
         public void onPageSelected(int position) {
+            Log.i("hei","onPageSelected "+position);
+            ((MainActivity)getActivity()).mSaveTemp.put("home", position);
         }
 
     }
