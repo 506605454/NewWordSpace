@@ -3,6 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="tittleBar_width">50dp</dimen>
+
+    <dimen name="login_bg_padding_width">40dp</dimen>
     <dimen name="all_padding">15dp</dimen>
     <dimen name="most_little_padding">3dp</dimen>
     <dimen name="middle_padding">25dp</dimen>

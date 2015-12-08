@@ -12,10 +12,8 @@ import android.widget.TextView;
 
 import com.hqw.huangye.R;
 import com.hqw.huangye.bean.Artical;
-import com.hqw.huangye.bean.User;
 import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.callback.ResultCallback;
-import com.zhy.http.okhttp.request.OkHttpRequest;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,6 +25,7 @@ public class ArticalViewPageFragment extends Fragment {
 
     private TextView textView;
     private String mWhat;
+    private Artical mArtical;
     private TextView mContent;
     private TextView mAuthor;
     private TextView mCreateTime;
@@ -35,21 +34,19 @@ public class ArticalViewPageFragment extends Fragment {
     private TextView mButtomName;
     private TextView mSayGood;
     private TextView mTittle;
-    public abstract class MyResultCallback<T> extends ResultCallback<T>
-    {
+
+    public abstract class MyResultCallback<T> extends ResultCallback<T> {
 
         @Override
-        public void onBefore(Request request)
-        {
+        public void onBefore(Request request) {
             super.onBefore(request);
-          //  setTitle("loading...");
+            //  setTitle("loading...");
         }
 
         @Override
-        public void onAfter()
-        {
+        public void onAfter() {
             super.onAfter();
-         //   setTitle("Sample-okHttp");
+            //   setTitle("Sample-okHttp");
         }
     }
 
@@ -57,8 +54,9 @@ public class ArticalViewPageFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
         Bundle args = getArguments();
+        mArtical = args.getParcelable("artical");
         mWhat = args != null ? args.getString("text") : "";
-        Log.i("hei","文章 onCreate");
+        Log.i("hei", "文章 onCreate");
         super.onCreate(savedInstanceState);
     }
 
@@ -66,7 +64,13 @@ public class ArticalViewPageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.artical_viewpage_fragment, container, false);
-      initView(view);
+        initView(view);
+
+        return view;
+    }
+
+    private void initView(View view) {
+
         mContent = (TextView) view.findViewById(R.id.artical_content);
         mAuthor = (TextView) view.findViewById(R.id.artical_author);
         mSayGood = (TextView) view.findViewById(R.id.up_count);
@@ -75,11 +79,7 @@ public class ArticalViewPageFragment extends Fragment {
         mTag = (TextView) view.findViewById(R.id.artical_author_introduce);
         mButtomName = (TextView) view.findViewById(R.id.artical_author_buttom);
         mTittle = (TextView) view.findViewById(R.id.artical_tittle);
-        return view;
-    }
-
-    private void initView(View view) {
-
+        showData(mArtical);
 
     }
 
@@ -96,7 +96,7 @@ public class ArticalViewPageFragment extends Fragment {
 
     @Override
     public void onDestroy() {
-        Log.i("hei","文章被摧毁了");
+        Log.i("hei", "文章被摧毁了");
         super.onDestroy();
     }
 
@@ -104,41 +104,30 @@ public class ArticalViewPageFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        String url = "http://192.168.1.108:8080/page/two/getArtical.do?page="+mWhat;
         if (isVisibleToUser) {
-            if (textView!=null){
+            if (textView != null) {
                 textView.setText(mWhat);
             }
             Log.i("hei", "文章可见" + getClass());
-            new OkHttpRequest.Builder()
-                    .url(url)
-                    .get(new MyResultCallback<Artical>() {
-                        @Override
-                        public void onError(Request request, Exception e) {
-                            Log.e("hei", "onError , e = " + e.getMessage());
-                        }
-
-                        @Override
-                        public void onResponse(Artical artical) {
-                            Log.e("hei", "onResponse , Artical = " + artical.toString());
-                            Log.e("hei", "onResponse , Artical = " + artical.getContent());
-                            mContent.setText(Html.fromHtml(artical.getContent()));
-                            mButtomName.setText(artical.getAuthor());
-                            mAuthor.setText(artical.getAuthor());
-                            mSayGood.setText(artical.getSaygood()+"");
-
-                            long createTime = artical.getCreateTime();
-                            SimpleDateFormat sdf= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-//前面的lSysTime是秒数，先乘1000得到毫秒数，再转为java.util.Date类型
-                            java.util.Date dt = new Date(createTime);
-                            String sDateTime = sdf.format(dt);
-                            mCreateTime.setText(sDateTime);
-                            mWeibo.setText(artical.getWeibo());
-                            mTag.setText(artical.getTag());
-                            mTittle.setText(artical.getTittleName());
-                        }
-                    });
 
         }
     }
+
+    private void showData(Artical artical) {
+        mContent.setText(Html.fromHtml(artical.getContent()));
+        mButtomName.setText(mArtical.getAuthor());
+        mAuthor.setText(mArtical.getAuthor());
+        mSayGood.setText(mArtical.getSaygood() + "");
+
+        long createTime = mArtical.getCreateTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        java.util.Date dt = new Date(createTime);
+        String sDateTime = sdf.format(dt);
+        mCreateTime.setText(sDateTime);
+        mWeibo.setText(mArtical.getWeibo());
+        mTag.setText(mArtical.getTag());
+        mTittle.setText(mArtical.getTittleName());
+    }
+
+
 }

@@ -1,14 +1,12 @@
 package com.hqw.huangye.activity;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.hqw.huangye.R;
 import com.hqw.huangye.fragment.ArticalFragment;
@@ -17,6 +15,7 @@ import com.hqw.huangye.fragment.IssueFragment;
 import com.hqw.huangye.fragment.PersonalFragment;
 import com.hqw.huangye.fragment.StuffFragment;
 import com.hqw.huangye.view.MyBottomLayout;
+import com.litesuits.common.assist.Toastor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +28,7 @@ public class MainActivity extends FragmentActivity {
     PersonalFragment personalFragment;
     IssueFragment issueFragment;
     StuffFragment stuffFragment;
+//    ImageView shareView;
 
     public Map<String,Integer> mSaveTemp;
 
@@ -116,5 +116,13 @@ public class MainActivity extends FragmentActivity {
 
     private void findView() {
         myBottomLayout = (MyBottomLayout) findViewById(R.id.bottom_bar);
+//        shareView = (ImageView) findViewById(R.id.share_img);
+//        shareView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toastor toastor = new Toastor(MainActivity.this);
+//                toastor.showToast("点击了");
+//            }
+//        });
     }
 }

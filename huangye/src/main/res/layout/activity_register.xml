@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hqw.huangye.activity.RegisterActivity">
+
+
+    <RelativeLayout
+
+        android:id="@+id/login_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_big_width"
+        android:background="@drawable/loginbg">
+
+        <ImageView
+            android:id="@+id/back_to_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_register"
+            android:paddingTop="@dimen/most_little_padding"
+           android:textSize="@dimen/artical_tittle"
+            android:layout_centerHorizontal="true"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/login_bg_padding_width"
+            android:background="@drawable/my_icon_two" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/all_padding"
+            android:layout_marginRight="@dimen/all_padding"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/user" />
+
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_bg_padding_width"
+                android:hint="@string/user_account"
+                android:phoneNumber="true" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/all_padding"
+        android:layout_marginRight="@dimen/all_padding"
+        android:layout_marginTop="@dimen/all_padding"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/password" />
+
+
+
+        <EditText
+            android:id="@+id/verify_code"
+            android:layout_weight="0.8"
+            android:numeric="integer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_bg_padding_width"
+            android:hint="@string/user_verify_code"
+              />
+
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取验证码"
+            android:id="@+id/get_verify_code" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/user_password_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/all_padding"
+        android:layout_marginRight="@dimen/all_padding"
+        android:layout_marginTop="@dimen/all_padding"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/password" />
+
+        <EditText
+            android:id="@+id/user_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_bg_padding_width"
+            android:ems="10"
+            android:hint="@string/input_user_password"
+            android:inputType="textPassword" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/next_step"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tittleBar_width"
+        android:layout_margin="@dimen/all_padding"
+        android:text="next step" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/all_padding"
+        android:layout_marginRight="@dimen/all_padding"
+        android:orientation="horizontal">
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+
